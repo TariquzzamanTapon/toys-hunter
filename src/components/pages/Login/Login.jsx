@@ -2,7 +2,6 @@ import React from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineLogout, HiOutlineMail, HiOutlineX } from "react-icons/hi";
-import { FaGoogle } from "react-icons/fa";
 import { useState } from 'react';
 
 const Login = () => {
@@ -13,6 +12,9 @@ const Login = () => {
     const handleLogin = (e)=>{
         const email = e.target.email.value;
         const password = e.target.password.value;
+    };
+    const handleGoogleSign = () =>{
+
     }
 
     return (
@@ -37,7 +39,7 @@ const Login = () => {
                         </div>
 
                         <div className='mb-3'>
-                            <button className='btn rounded-lg'><HiOutlineLogin className='h-6 w-6'></HiOutlineLogin>Sign In</button>
+                            <button className='btn rounded-lg bg-yellow-500'><HiOutlineLogin className='h-6 w-6'></HiOutlineLogin>Sign In</button>
                         </div>
 
                         <p className='mt-4'>Or Sign in with social platform</p>
