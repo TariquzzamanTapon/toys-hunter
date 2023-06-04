@@ -1,11 +1,22 @@
 import React from 'react';
 import img from '../../../assets/logo.png'
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { HiLogout } from 'react-icons/hi';
+import { Result } from 'postcss';
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(error => {
+
+            })
+    }
     return (
         <>
             <div className="navbar bg-base-100 shadow-md">
@@ -45,8 +56,16 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
+                    {
+                        user ? <>
+                            <div className='flex items-center'>
+                                <img className='w-6 h-6 mx-2 rounded-full' src='' alt="" />
+                                <Link onClick={handleLogOut}><HiLogout className='h-6 w-6' title='Sign Out'></HiLogout></Link>
+                            </div>
 
-                    <Link to='/login' className="btn bg-yellow-400 font-bold">Sign up</Link>
+                        </> :
+                            <Link to='/login' className="btn bg-yellow-400 font-bold">Sign up</Link>
+                    }
                 </div>
             </div>
         </>
