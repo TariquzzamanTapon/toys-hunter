@@ -10,6 +10,7 @@ import {
 import Home from './components/pages/Home/Home.jsx';
 import Login from './components/pages/Login/Login.jsx';
 import Register from './components/pages/Register/Register.jsx';
+import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,17 +27,19 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path : '/register',
-        element : <Register></Register>
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='px-5 mt-3'>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>,
-  </div>
+  <AuthProvider>
+    <div className='px-5 mt-3'>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>,
+    </div>
+  </AuthProvider>
 )

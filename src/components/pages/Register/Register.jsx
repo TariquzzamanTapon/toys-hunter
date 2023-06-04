@@ -1,15 +1,34 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineMail, HiOutlinePhotograph, HiUser } from "react-icons/hi";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
-    const handleRegister = (e) =>{
-        
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const photo = e.target.photo.value;
+        const password = e.target.password.value;
+        createUser(email, password)
+        .then(result=>{
+            console.log(result.user);
+            setSuccess('User are create successful ');
+            setError('');
+        })
+        .catch(error=>{
+            setError(error.message);
+            setSuccess('')
+        })
     }
-     
+
     return (
         <div>
             <div className="shadow-xl md:flex justify-between rounded p-2 md:p-7 m-3 md:w-2/3 mx-auto">
