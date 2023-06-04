@@ -7,27 +7,35 @@ import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {logIn} = useContext(AuthContext);
+    const { logIn, googleSign } = useContext(AuthContext);
 
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
 
-    const handleLogin = (e)=>{
+    const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         logIn(email, password)
-        .then(result=>{
-            setSuccess('Login Successfully');
-            setError('')
-        })
-        .catch(error=>{
-            setError(error.message);
-            setSuccess('');
-        })
+            .then(result => {
+                setSuccess('Login Successfully');
+                setError('')
+            })
+            .catch(error => {
+                setError(error.message);
+                setSuccess('');
+            })
     };
-    const handleGoogleSign = () =>{
-        
+    const handleGoogleSign = () => {
+        googleSign()
+            .then(result => {
+                setSuccess('Login Successfully');
+                setError('')
+            })
+            .catch(error => {
+                setError(error.message);
+                setSuccess('');
+            })
     }
 
     return (
@@ -57,7 +65,7 @@ const Login = () => {
 
                         <p className='mt-4'>Or Sign in with social platform</p>
                         <div className='my-1'>
-                           
+
                             <button onClick={handleGoogleSign}><FaGoogle className='h-6 w-6 mr-2' title='Sign with Google'></FaGoogle></button>
                         </div>
 

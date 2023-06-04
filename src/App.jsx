@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/pages/Header.jsx/Header'
 import { Outlet } from 'react-router-dom'
+import Footer from './components/pages/Footer/Footer'
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header></Header>
       <Outlet></Outlet>
+      <Footer></Footer>
 
     </>
   )

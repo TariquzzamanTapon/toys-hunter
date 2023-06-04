@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { HiLogout } from 'react-icons/hi';
-import { Result } from 'postcss';
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
