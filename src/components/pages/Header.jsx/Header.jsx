@@ -59,8 +59,8 @@ const Header = () => {
                     {
                         user ? <>
                             <div className='flex items-center'>
-                                <img className='w-6 h-6 mx-2 rounded-full' src='' alt="" />
-                                <Link onClick={handleLogOut}><HiLogout className='h-6 w-6' title='Sign Out'></HiLogout></Link>
+                                <img className='w-8 mx-2 rounded-full' src={user.photoURL} title={user.displayName} alt="" />
+                                <Link onClick={handleLogOut}><HiLogout className='h-8 w-8' title='Sign Out'></HiLogout></Link>
                             </div>
 
                         </> :

@@ -9,7 +9,7 @@ const Register = () => {
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser, userProfile } = useContext(AuthContext)
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -20,6 +20,7 @@ const Register = () => {
         createUser(email, password)
         .then(result=>{
             console.log(result.user);
+            userProfile(result.user, name,photo);
             setSuccess('User are create successful ');
             setError('');
         })

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../Firebase/firebase.init';
 import { useEffect } from 'react';
 
@@ -9,30 +9,43 @@ import { useEffect } from 'react';
 
 export const AuthContext = createContext(null);
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
     const [user, setUser] = useState([]);
-    
-    const createUser = (email, password) =>{
+
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const logIn = (email, password)=>{
+    const logIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
-    
-    const logOut = ()=>{
+
+    const logOut = () => {
         return signOut(auth);
     }
 
-    useEffect(()=>{
-       const unsubscribe= onAuthStateChanged(auth, loggedUser=>{
+    const userProfile = (rUser, name, img) => {
+        updateProfile(rUser, {
+            displayName: name,
+            photoURL: img
+        }).then(result => {
+            setUser(result.user)
+            console.log(result.user, 'user profile')
+        })
+            .catch(error => {
+                console.log(error, 'come from error')
+            })
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
         });
-        return ()=>{
+        return () => {
             unsubscribe();
         }
-    },[])
+    }, [])
 
 
 
@@ -43,6 +56,7 @@ const AuthProvider = ({children}) => {
         createUser,
         logIn,
         logOut,
+        userProfile,
         user
     }
     return (
