@@ -3,18 +3,31 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineLogout, HiOutlineMail, HiOutlineX } from "react-icons/hi";
 import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {logIn} = useContext(AuthContext);
 
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
 
     const handleLogin = (e)=>{
+        e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        logIn(email, password)
+        .then(result=>{
+            setSuccess('Login Successfully');
+            setError('')
+        })
+        .catch(error=>{
+            setError(error.message);
+            setSuccess('');
+        })
     };
     const handleGoogleSign = () =>{
-
+        
     }
 
     return (
@@ -47,8 +60,9 @@ const Login = () => {
                            
                             <button onClick={handleGoogleSign}><FaGoogle className='h-6 w-6 mr-2' title='Sign with Google'></FaGoogle></button>
                         </div>
+
                         {
-                            error && <p className='text-red-600 font-bold flex items-center'><HiOutlineX className='h-6 w-6'></HiOutlineX>{error}</p>
+                            error && <p className='text-red-600 font-bold flex items-center'>{error}</p>
                         }
                         <p className='text-green-400 font-bold'>{success}</p>
                     </form>
