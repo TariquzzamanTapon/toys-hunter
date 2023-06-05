@@ -1,9 +1,11 @@
 import React from 'react';
+import Gallery from '../Gallery/Gallery';
 
 const Home = () => {
     return (
         <div>
-            This home
+            this is home
+            <Gallery></Gallery>
         </div>
     );
 };
