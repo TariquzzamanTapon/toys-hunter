@@ -30,7 +30,7 @@ const Header = () => {
                             <li><Link to='/alltoys'>All Toys</Link></li>
                             {
                                 user ? <>
-                                    <li><Link>Add A Toys</Link></li>
+                                    <li><Link to='/addtoy'>Add A Toys</Link></li>
                                     <li><Link>My Toys</Link></li>
                                 </> : ""
                             }
@@ -47,7 +47,7 @@ const Header = () => {
                         <li><Link to='/alltoys'>All Toys</Link></li>
                         {
                             user ? <>
-                                <li><Link>Add A Toys</Link></li>
+                                <li><Link to='/addtoy'>Add A Toys</Link></li>
                                 <li><Link>My Toys</Link></li>
                             </> : ""
                         }

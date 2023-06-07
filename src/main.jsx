@@ -15,6 +15,7 @@ import Error from './components/pages/Error/Error.jsx';
 import AllToys from './components/pages/AllToys/AllToys.jsx';
 import Toy from './components/pages/Toy/Toy.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import AddToy from './components/pages/AddToy/AddToy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
       },
       {
+        path : '/addtoy',
+        element : <AddToy></AddToy>
+      },
+      {
         path: '/login',
         element: <Login></Login>
       },
@@ -50,7 +55,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider>
-    <div className='px-5 mt-3'>
+    <div className=' mt-3 md:w-11/12 mx-auto'>
       <React.StrictMode>
         <RouterProvider router={router} />
       </React.StrictMode>,

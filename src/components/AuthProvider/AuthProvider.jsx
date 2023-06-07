@@ -10,18 +10,22 @@ import { useEffect } from 'react';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true);
     const auth = getAuth(app);
     const [user, setUser] = useState([]);
 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const logIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
@@ -43,12 +47,14 @@ const AuthProvider = ({ children }) => {
 
 
     const googleSign = ()=>{
+        setLoading(true)
         return signInWithPopup(auth, providerGoogle);
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
+            setLoading(false);
         });
         return () => {
             unsubscribe();
@@ -66,6 +72,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         userProfile,
         googleSign,
+        loading,
         user
     }
     return (
