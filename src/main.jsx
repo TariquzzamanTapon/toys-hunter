@@ -14,12 +14,13 @@ import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import Error from './components/pages/Error/Error.jsx';
 import AllToys from './components/pages/AllToys/AllToys.jsx';
 import Toy from './components/pages/Toy/Toy.jsx';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement : <Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -27,13 +28,13 @@ const router = createBrowserRouter([
 
       },
       {
-        path : '/alltoys',
-        element : <AllToys></AllToys>
+        path: '/alltoys',
+        element: <AllToys></AllToys>
       },
       {
-        path : '/toy/:id',
-        element : <Toy></Toy>,
-        loader : ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+        path: '/toy/:id',
+        element: <PrivateRoute><Toy></Toy></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
       },
       {
         path: '/login',

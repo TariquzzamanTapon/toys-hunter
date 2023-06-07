@@ -13,7 +13,8 @@ const Toy = () => {
                 <figure><img className='' src={picture_url} alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{toy_name}</h2>
-                    <h2 className="card-title">Seller Name :  {seller_name}</h2>
+
+                    <p><strong>Seller Name : </strong>{seller_name}</p>
                     <p><strong>Seller Email :</strong> {seller_email}</p>
                     <p> <strong>Price :</strong> {price} $</p>
                     <p> <strong>Ratting :</strong> {rating} </p>
@@ -22,7 +23,7 @@ const Toy = () => {
                 </div>
             </div>
 
-            
+
         </div>
     );
 };

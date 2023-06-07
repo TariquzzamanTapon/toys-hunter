@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineLogout, HiOutlineMail, HiOutlineX } from "react-icons/hi";
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -11,6 +11,10 @@ const Login = () => {
 
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
+    const location = useLocation();
+    console.log(location);
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,6 +24,7 @@ const Login = () => {
             .then(result => {
                 setSuccess('Login Successfully');
                 setError('')
+                navigate(from, {replace:true})
             })
             .catch(error => {
                 setError(error.message);
@@ -30,7 +35,8 @@ const Login = () => {
         googleSign()
             .then(result => {
                 setSuccess('Login Successfully');
-                setError('')
+                setError('');
+                navigate(from, {replace:true})
             })
             .catch(error => {
                 setError(error.message);
