@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const AddToy = () => {
@@ -30,7 +31,17 @@ const AddToy = () => {
             body: JSON.stringify(newToys)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
 
 
 
@@ -44,13 +55,13 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Picture</span>
                         </label>
-                        <input type="text" name='picture' placeholder="Picture URL of the toy" className="input input-bordered w-full"  />
+                        <input type="text" name='picture' placeholder="Picture URL of the toy" className="input input-bordered w-full" />
                     </div>
                     <div className="form-control w-full mx-2 ">
                         <label className="label">
                             <span className="label-text">Toy Name</span>
                         </label>
-                        <input type="text" name='toyname' placeholder="Toy name" className="input input-bordered w-full" required/>
+                        <input type="text" name='toyname' placeholder="Toy name" className="input input-bordered w-full" required />
                     </div>
                 </div>
 
@@ -99,7 +110,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Available Quantity</span>
                         </label>
-                        <input type="number" placeholder="Available quantity" className="input input-bordered w-full" name='quantity'required />
+                        <input type="number" placeholder="Available quantity" className="input input-bordered w-full" name='quantity' required />
                     </div>
                 </div>
 
