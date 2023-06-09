@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { AiFillDelete, AiFillEdit, AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit, } from "react-icons/ai";
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
     const [datas, setDatas] = useState([]);
@@ -55,7 +56,6 @@ const MyToys = () => {
 
     // EDIT
     const handleEdit = (id) => {
-
     }
 
 
@@ -80,16 +80,18 @@ const MyToys = () => {
                             <tbody>
                                 {/* row 1 */}
                                 <tr>
-                                    {
-                                        toy?.picture_url && <td><img className='w-10' src={toy?.picture_url} alt="picture!" /></td>
-                                    }
+
+                                    <td><img className='w-10' src={toy?.picture_url} alt="picture!" /></td>
                                     <th>{toy?.toy_name}</th>
                                     <td>{toy?.sub_category}</td>
                                     <td>{toy?.price} $</td>
                                     <td>{toy?.available_quantity}</td>
                                     <td>
                                         <div className='flex'>
-                                            <AiFillEdit onClick={() => handleEdit(toy?._id)} className='h-6 w-6 hover:text-warning mx-1'></AiFillEdit>
+
+                                            <Link to={`/updatetoy/${toy?._id}`}>
+                                                <AiFillEdit className='h-6 w-6 hover:text-warning mx-1'></AiFillEdit>
+                                            </Link>
 
                                             <AiFillDelete onClick={() => handleDelete(toy?._id)} className='h-6 w-6 hover:text-warning mx-1'></AiFillDelete>
                                         </div>

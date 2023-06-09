@@ -8,6 +8,7 @@ import { HiLogout } from 'react-icons/hi';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(result => {
@@ -59,7 +60,7 @@ const Header = () => {
                     {
                         user ? <>
                             <div className='flex items-center'>
-                                <img className='w-8 mx-2 rounded-full' src={user.photoURL} title={user.displayName} alt="" />
+                                <img className='w-8 mx-2 rounded-full' src={user?.photoURL} title={user.displayName} alt="" />
                                 <Link onClick={handleLogOut}><HiLogout className='h-8 w-8' title='Sign Out'></HiLogout></Link>
                             </div>
 
