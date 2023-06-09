@@ -9,7 +9,6 @@ const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
 
     useEffect(() => {
-
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => {
@@ -17,6 +16,8 @@ const MyToys = () => {
                 setDatas(findingData);
             });
     }, []);
+
+
 
 
     // DELETE
@@ -54,15 +55,38 @@ const MyToys = () => {
             })
     }
 
-    // EDIT
-    const handleEdit = (id) => {
+    // HANDLE_ASCENDING
+    const handleass = () => {
+        fetch('http://localhost:5000/asstoys')
+            .then(res => res.json())
+            .then(data => {
+                const findingData = data.filter(d => d.email == user?.email);
+                setDatas(findingData);
+            });
     }
-
+    // HANDLE_DESCENDING
+    const handledes = () => {
+        fetch('http://localhost:5000/destoys')
+            .then(res => res.json())
+            .then(data => {
+                const findingData = data.filter(d => d.email == user?.email);
+                setDatas(findingData);
+            });
+    }
 
 
     return (
         <div>
 
+            <div className='text-right'>
+                <div className="dropdown dropdown-left py-1">
+                    <label tabIndex={0} className="btn m-1">Filter by price</label>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><button onClick={handleass}>Ascending</button></li>
+                        <li><button onClick={handledes}>Descending</button></li>
+                    </ul>
+                </div>
+            </div>
             <div className="overflow-x-auto md:my-10 my-5">
                 <table className="table table-zebra w-full">
                     <thead>

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img from '../../../assets/logo.png'
 
+
 const Footer = () => {
+    
     return (
-        <div>
+        <div data-aos="zoom-in">
             <footer className="footer footer-center p-10 bg-yellow-400 text-black">
                 <div>
                     <img className='w-36' src={img} alt="" />
