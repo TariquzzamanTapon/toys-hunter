@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 const AllToys = () => {
+    const [limit, setLimit] = useState(20);
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch(`http://localhost:5000/toys?limit=${limit}`)
             .then(res => res.json())
             .then(data => setToys(data));
     }, [])
