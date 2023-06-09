@@ -5,20 +5,21 @@ import Swal from 'sweetalert2';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+
     const handleAddToy = (e) => {
         e.preventDefault();
         const picture_url = e.target.picture.value;
         const toy_name = e.target.toyname.value;
         const name = e.target.name.value || user?.displayName;
         const seller_name = e.target.sellername.value || user?.email;
-        const seller_email = e.target.selleremail.value || user?.email;
+        const email = e.target.selleremail.value || user?.email;
         const sub_category = e.target.subcategories.value;
         const price = e.target.price.value;
         const rating = e.target.rating.value;
         const available_quantity = e.target.quantity.value;
         const detail_description = e.target.textarea.value;
 
-        const newToys = { picture_url, toy_name, name, seller_name, seller_email, sub_category, price, rating, available_quantity, detail_description };
+        const newToys = { picture_url, toy_name, name, seller_name, email, sub_category, price, rating, available_quantity, detail_description };
 
         // console.log(newToys);
 
@@ -40,6 +41,14 @@ const AddToy = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                      })
                 }
             })
 

@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Toy = () => {
     const toy = useLoaderData();
-    const { picture_url, toy_name, seller_name, seller_email, price, rating, available_quantity, detail_description } = toy;
+    const { picture_url, toy_name, seller_name, email, price, rating, available_quantity, detail_description } = toy;
     console.log(toy);
     return (
         <div>
@@ -15,11 +15,11 @@ const Toy = () => {
                     <h2 className="card-title">{toy_name}</h2>
 
                     <p><strong>Seller Name : </strong>{seller_name}</p>
-                    <p><strong>Seller Email :</strong> {seller_email}</p>
+                    <p><strong>Seller Email :</strong> {email}</p>
                     <p> <strong>Price :</strong> {price} $</p>
                     <p> <strong>Ratting :</strong> {rating} </p>
                     <p> <strong>Available Quantity : </strong> {available_quantity}</p>
-                    <p>{detail_description}</p>
+                    <p><strong>Description : </strong>{detail_description}</p>
                 </div>
             </div>
 
