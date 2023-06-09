@@ -18,6 +18,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import AddToy from './components/pages/AddToy/AddToy.jsx';
 import MyToys from './components/pages/MyToys/MyToys.jsx';
 import UpdateToy from './components/pages/UpdateToy/UpdateToy.jsx';
+import Blog from './components/pages/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path : '/blog',
+        element : <Blog></Blog>
       }
     ]
   },
