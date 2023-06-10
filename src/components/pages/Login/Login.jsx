@@ -5,6 +5,7 @@ import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineLogout, HiOutlineMail, Hi
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { logIn, googleSign } = useContext(AuthContext);
@@ -22,9 +23,15 @@ const Login = () => {
         const password = e.target.password.value;
         logIn(email, password)
             .then(result => {
-                setSuccess('Login Successfully');
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 setError('')
-                navigate(from, {replace:true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
@@ -34,9 +41,15 @@ const Login = () => {
     const handleGoogleSign = () => {
         googleSign()
             .then(result => {
-                setSuccess('Login Successfully');
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 setError('');
-                navigate(from, {replace:true})
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);

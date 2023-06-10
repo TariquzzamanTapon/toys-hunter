@@ -1,29 +1,40 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
     const toy = useLoaderData();
-    const {_id,price,available_quantity, detail_description} = toy;
-       
-    
+    const { _id, price, available_quantity, detail_description } = toy;
+
+
     const handleUpdate = (e) => {
         e.preventDefault();
         const price = e.target.price.value;
         const available_quantity = e.target.quantity.value;
         const detail_description = e.target.textarea.value;
-        const updateUser = {price, available_quantity, detail_description};
+        const updateUser = { price, available_quantity, detail_description };
 
 
-        fetch(`http://localhost:5000/toys/${_id}`,{
-            method : "PUT",
-            headers : {
-                'content-type' :'application/json'
+        fetch(`http://localhost:5000/toys/${_id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(updateUser)
+            body: JSON.stringify(updateUser)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data update successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
     return (
         <div>

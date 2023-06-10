@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineMail, HiOutlinePhotograph, HiUser } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const [success, setSuccess] = useState([]);
@@ -18,16 +19,22 @@ const Register = () => {
         const photo = e.target.photo.value;
         const password = e.target.password.value;
         createUser(email, password)
-        .then(result=>{
-            console.log(result.user);
-            userProfile(result.user, name,photo);
-            setSuccess('User are create successful ');
-            setError('');
-        })
-        .catch(error=>{
-            setError(error.message);
-            setSuccess('')
-        })
+            .then(result => {
+                console.log(result.user);
+                userProfile(result.user, name, photo);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Register Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setError('');
+            })
+            .catch(error => {
+                setError(error.message);
+                setSuccess('')
+            })
     }
 
     return (
