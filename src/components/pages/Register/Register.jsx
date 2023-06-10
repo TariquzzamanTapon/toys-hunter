@@ -5,12 +5,14 @@ import { HiOutlineLockClosed, HiOutlineLogin, HiOutlineMail, HiOutlinePhotograph
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
+    const { createUser, userProfile } = useContext(AuthContext);
 
-    const { createUser, userProfile } = useContext(AuthContext)
+    useTitle('| Register')
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -85,7 +87,7 @@ const Register = () => {
                         </div>
 
                         <div className='mb-3'>
-                            <button className='btn rounded-lg'><HiOutlineLogin className='h-6 w-6'></HiOutlineLogin>SIGN UP</button>
+                            <button className='btn rounded-lg btn-warning'><HiOutlineLogin className='h-6 w-6'></HiOutlineLogin>SIGN UP</button>
                         </div>
 
                     </form>

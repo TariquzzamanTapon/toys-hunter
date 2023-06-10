@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 const AllToys = () => {
     const [limit, setLimit] = useState(20);
     const [toys, setToys] = useState([]);
+    useTitle("| Alltoys");
 
     useEffect(() => {
         fetch(`http://localhost:5000/toys?limit=${limit}`)

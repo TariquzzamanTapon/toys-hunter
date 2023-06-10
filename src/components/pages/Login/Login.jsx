@@ -6,10 +6,12 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { logIn, googleSign } = useContext(AuthContext);
 
+    useTitle('| Login');
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
     const location = useLocation();
@@ -98,7 +100,7 @@ const Login = () => {
 
                 {/* new brand */}
                 <div className='md:h-1/2 md:w-1/2 text-center p-4'>
-                    <h1 className='text-2xl font-bold p-2 md:p-3'>New to Brand ?</h1>
+                    <h1 className='text-2xl font-bold p-2 md:p-3'>Are you New ?</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ducimus minus sequi assumenda ?</p>
                     <div className='mt-2'>
                         <Link to='/register' className='btn rounded-lg'><HiOutlineLogout className='h-6 w-6'></HiOutlineLogout>Sign up</Link>
