@@ -8,7 +8,7 @@ import { HiLogout } from 'react-icons/hi';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(result => {

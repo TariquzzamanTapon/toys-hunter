@@ -9,7 +9,7 @@ const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toys-hunter.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.email == user?.email);
@@ -22,8 +22,8 @@ const MyToys = () => {
 
     // DELETE
     const handleDelete = (id) => {
-        console.log(id);
-        fetch(`http://localhost:5000/toys/${id}`, {
+        // console.log(id);
+        fetch(`https://toys-hunter.vercel.app/toys/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -57,7 +57,7 @@ const MyToys = () => {
 
     // HANDLE_ASCENDING
     const handleass = () => {
-        fetch('http://localhost:5000/asstoys')
+        fetch('hhttps://toys-hunter.vercel.app/asstoys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.email == user?.email);
@@ -66,7 +66,7 @@ const MyToys = () => {
     }
     // HANDLE_DESCENDING
     const handledes = () => {
-        fetch('http://localhost:5000/destoys')
+        fetch('https://toys-hunter.vercel.app/destoys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.email == user?.email);

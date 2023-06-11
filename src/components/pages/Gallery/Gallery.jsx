@@ -10,17 +10,17 @@ const Gallery = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-6">
                 <div className=" relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/robot-with-pliers_1048-4573.jpg?w=740&t=st=1685940669~exp=1685941269~hmac=e9d7241af48b79e0419bace21b278d18ddeda745fe5f937226db3adfb48a5b8c" alt="Image 1" />
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-vector/diy-creative-workshop-with-sewing-tools_23-2148530144.jpg?w=740&t=st=1686024021~exp=1686024621~hmac=c75b25b871e24d904349a834d1b22599b359971618172406f87b5d8d6c47a286" alt="Image 1" />
 
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <div className='flex'>
-                            <FaThumbsUp  className='w-9 h-9 mr-2 hover:text-primary'></FaThumbsUp>
+                            <FaThumbsUp className='w-9 h-9 mr-2 hover:text-primary'></FaThumbsUp>
                             <FaRegShareSquare className='w-9 h-9  hover:text-primary'></FaRegShareSquare>
                         </div>
                     </div>
                 </div>
                 <div className="relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?w=740&t=st=1685940619~exp=1685941219~hmac=82d94c7347c977db35c305906f4523275c7c1366abcffc8f2553661427188a62" alt="Image 2" />
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/front-view-table-with-solutions-microscope_140725-83496.jpg?w=740&t=st=1686023809~exp=1686024409~hmac=01ebc12df2e4e88db16563507205cb84c0b4723c26a8a3537b6f39ce92d14621" alt="Image 2" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <div className='flex'>
                             <FaThumbsUp className='w-9 h-9 mr-2  hover:text-primary'></FaThumbsUp>
@@ -29,17 +29,7 @@ const Gallery = () => {
                     </div>
                 </div>
                 <div className="relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/robot-with-pliers_1048-4573.jpg?w=740&t=st=1685940669~exp=1685941269~hmac=e9d7241af48b79e0419bace21b278d18ddeda745fe5f937226db3adfb48a5b8c" alt="Image 3" />
-
-                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                        <div className='flex'>
-                            <FaThumbsUp className='w-9 h-9 mr-2  hover:text-primary'></FaThumbsUp>
-                            <FaRegShareSquare className='w-9 h-9  hover:text-primary'></FaRegShareSquare>
-                        </div>
-                    </div>
-                </div>
-                <div className="relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/3d-lawyer_1048-5017.jpg?w=740&t=st=1685940804~exp=1685941404~hmac=21862954280ec827fff3a97c5b2effea65b02105337314dd6ca16d194c1530ae" alt="Image 3" />
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-vector/toy-constructor-isometric-blocks_1284-26315.jpg?w=740&t=st=1686024105~exp=1686024705~hmac=30e7423f8947c8263368dec2156d6e270ebdfa00c5d76114bee2f9e324479337" alt="Image 3" />
 
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <div className='flex'>
@@ -49,7 +39,17 @@ const Gallery = () => {
                     </div>
                 </div>
                 <div className="relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/robot-with-pliers_1048-4573.jpg?w=740&t=st=1685940669~exp=1685941269~hmac=e9d7241af48b79e0419bace21b278d18ddeda745fe5f937226db3adfb48a5b8c" alt="Image 3" />
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-vector/set-science-equipments_1308-36788.jpg?w=826&t=st=1686409666~exp=1686410266~hmac=30a7ff64e423db994fcedb63da14f19435bed1c6c101fa1ce03658e34debf7a8" alt="Image 3" />
+
+                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                        <div className='flex'>
+                            <FaThumbsUp className='w-9 h-9 mr-2  hover:text-primary'></FaThumbsUp>
+                            <FaRegShareSquare className='w-9 h-9  hover:text-primary'></FaRegShareSquare>
+                        </div>
+                    </div>
+                </div>
+                <div className="relative overflow-hidden cursor-pointer">
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-vector/set-geometry-shapes-other-school-items_1308-40947.jpg?w=740&t=st=1686409519~exp=1686410119~hmac=ed235d8b5341a4fd64727d8855b21da9dc62a29b5994b241aa759417f03740c3" alt="Image 3" />
 
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <div className='flex'>
@@ -59,7 +59,7 @@ const Gallery = () => {
                     </div>
                 </div>
                 <div className="relative overflow-hidden cursor-pointer">
-                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-photo/robot-balancing-tight-rope-with-euro-symbol_1048-3594.jpg?w=740&t=st=1685941747~exp=1685942347~hmac=526a2e36c6164dcd73009bc6ed77fc419e54171b688f6ac9a40b73d9c53da52c" alt="Image 3" />
+                    <img className="transition-transform duration-300 hover:scale-110" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-hopscotch-game_23-2149294741.jpg?w=740&t=st=1686409422~exp=1686410022~hmac=f8c5ab45d6bf47fc24e7731c29cc6c7742610b70356d35d253f45fa9b6befbb5" alt="Image 3" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 bg-yellow-400 bg-opacity-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                         <div className='flex'>
                             <FaThumbsUp className='w-9 h-9 mr-2 hover:text-primary'></FaThumbsUp>
@@ -67,7 +67,7 @@ const Gallery = () => {
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     );

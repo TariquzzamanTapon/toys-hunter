@@ -10,17 +10,17 @@ const ShopByCategory = () => {
     const [datas, setDatas] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toys-hunter.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.sub_category == 'Educational Toys');
-                console.log(findingData);
+                // console.log(findingData);
                 setDatas(findingData);
             });
     }, []);
 
     const handleMaths = () => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toys-hunter.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.sub_category == 'Math Toys');
@@ -29,7 +29,7 @@ const ShopByCategory = () => {
     }
 
     const handleScience = () => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toys-hunter.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 const findingData = data.filter(d => d.sub_category == 'Science Toys');
@@ -103,7 +103,6 @@ const ShopByCategory = () => {
                                             <p> <strong>Price :</strong> {data?.price} $</p>
                                             <p> <strong>Ratting :</strong> {data?.rating}</p>
                                             <Link to={`/toy/${data?._id}`}><button className="btn btn-primary">View Details</button></Link>
-
                                         </div>
                                     </div>
                                 </>)

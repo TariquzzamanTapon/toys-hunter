@@ -35,10 +35,10 @@ const AuthProvider = ({ children }) => {
             photoURL: img
         }).then(result => {
             setUser(result.user)
-            console.log(result.user, 'user profile')
+            // console.log(result.user, 'user profile')
         })
             .catch(error => {
-                console.log(error, 'come from error')
+                // console.log(error, 'come from error')
             })
     }
 

@@ -15,7 +15,7 @@ const Login = () => {
     const [success, setSuccess] = useState([]);
     const [error, setError] = useState([]);
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     const from = location.state?.from?.pathname || '/';
     const navigate = useNavigate();
 
@@ -105,7 +105,7 @@ const Login = () => {
                     <div className='mt-2'>
                         <Link to='/register' className='btn rounded-lg'><HiOutlineLogout className='h-6 w-6'></HiOutlineLogout>Sign up</Link>
                     </div>
-                    <img src="https://img.freepik.com/free-vector/user-verification-unauthorized-access-prevention-private-account-authentication-cyber-security-people-entering-login-password-safety-measures_335657-3530.jpg?w=740&t=st=1684730187~exp=1684730787~hmac=353b04c5a88ab2bf4066d93bc4f21fb163c1c80c5a4a2f59784470f532b87c41" alt="" />
+                    <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=740&t=st=1686409795~exp=1686410395~hmac=bf6358f65811bd2e6ab4a30f01cca6b23dbd51e9f6dddd666ee7aa9e5c79e3b7" alt="" />
 
                 </div>
 

@@ -26,7 +26,7 @@ const AddToy = () => {
         // console.log(newToys);
 
 
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toys-hunter.vercel.app/toys', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

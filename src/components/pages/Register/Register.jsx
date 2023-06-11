@@ -22,7 +22,7 @@ const Register = () => {
         const password = e.target.password.value;
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 userProfile(result.user, name, photo);
                 Swal.fire({
                     position: 'top-end',

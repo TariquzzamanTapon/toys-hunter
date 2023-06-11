@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 const OurSponsers = () => {
     return (
         <div>
-            <div className="my-4">
+            <div className="my-4 md:my-12">
                 <h1 className='text-xl md:text-4xl text-center font-bold mb-2'>Our <span className='bg-yellow-400'>Sponsored </span></h1>
                 <p className='mb-6 text-center text-xl'>Tempora nisi rem possimus. Corporis quos quia eum, culpa aperiam et officia. Lorem ipsum dolor sit amet consectetur <br /> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aspernatur doloribus ipsam</p>
                 <div>
